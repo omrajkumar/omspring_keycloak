@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>demo.com.example</groupId>
-	<artifactId>omspring</artifactId>
+	<artifactId>omspring_keycloak</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>omspring</name>
+	<name>omspring_keycloak</name>
 	<description>Demo project for Spring Boot</description>
 	<url />
 	<licenses>
