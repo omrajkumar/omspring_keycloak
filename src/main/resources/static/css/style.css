@@ -1,0 +1,28 @@
+.form-container {
+	transition: all 0.3s ease;
+}
+
+.toggle-forms {
+	cursor: pointer;
+	transition: color 0.3s ease;
+}
+
+.toggle-forms:hover {
+	color: #4f46e5;
+}
+
+.input-with-icon {
+	position: relative;
+}
+
+.input-with-icon input {
+	padding-left: 40px;
+}
+
+.input-icon {
+	position: absolute;
+	left: 12px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #9ca3af;
+}
