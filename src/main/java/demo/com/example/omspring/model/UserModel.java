@@ -7,17 +7,33 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "users")
+@Table(name = "keycloak_users")
 public class UserModel {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	private String keycloakUserId; // store KC ID for reference
 	private String username;
 	private String email;
-	private String password;
-	private String role;
+	private String firstName;
+	private String lastName;
+
+	public UserModel() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public UserModel(Long id, String keycloakUserId, String username, String email, String firstName, String lastName) {
+		super();
+		this.id = id;
+		this.keycloakUserId = keycloakUserId;
+		this.username = username;
+		this.email = email;
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
 
 	public Long getId() {
 		return id;
@@ -25,6 +41,14 @@ public class UserModel {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getKeycloakUserId() {
+		return keycloakUserId;
+	}
+
+	public void setKeycloakUserId(String keycloakUserId) {
+		this.keycloakUserId = keycloakUserId;
 	}
 
 	public String getUsername() {
@@ -43,26 +67,26 @@ public class UserModel {
 		this.email = email;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
-	public String getRole() {
-		return role;
+	public String getLastName() {
+		return lastName;
 	}
 
-	public void setRole(String role) {
-		this.role = role;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	@Override
 	public String toString() {
-		return "UserModel [id=" + id + ", username=" + username + ", email=" + email + ", password=" + password
-				+ ", role=" + role + "]";
+		return "UserModel [id=" + id + ", keycloakUserId=" + keycloakUserId + ", username=" + username + ", email="
+				+ email + ", firstName=" + firstName + ", lastName=" + lastName + "]";
 	}
 
 }
